@@ -12,7 +12,7 @@
 namespace EasyDingTalk\Kernel;
 
 use Overtrue\Http\Traits\ResponseCastable;
-use function EasyDingTalk\tap;
+use function EasyDingTalk\helpers;
 
 class AccessToken
 {
