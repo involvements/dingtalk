@@ -11,8 +11,8 @@
 
 namespace EasyDingTalk\Kernel;
 
+use function EasyDingTalk\tap;
 use Overtrue\Http\Traits\ResponseCastable;
-use function EasyDingTalk\helpers;
 
 class AccessToken
 {
@@ -37,6 +37,8 @@ class AccessToken
      * 获取钉钉 AccessToken
      *
      * @return array
+     *
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function get()
     {
@@ -51,6 +53,8 @@ class AccessToken
      * 获取 AccessToken
      *
      * @return string
+     *
+     * @throws \Psr\SimpleCache\InvalidArgumentException
      */
     public function getToken()
     {

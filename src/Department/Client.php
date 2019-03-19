@@ -38,8 +38,9 @@ class Client extends BaseClient
      */
     public function list($id = null, $isFetchChild = false, $lang = null)
     {
-        return $this->client->get('department/list',
-            compact('id', 'lang') + ['fetch_child' => $isFetchChild]);
+        return $this->client->get('department/list', [
+            'id' => $id, 'lang' => $lang, 'fetch_child' => $isFetchChild,
+        ]);
     }
 
     /**
@@ -88,7 +89,17 @@ class Client extends BaseClient
      */
     public function getUserCount($onlyActive = 0)
     {
-        return $this->client->get('department/get_org_user_count', compact('onlyActive'));
+        return $this->client->get('user/get_org_user_count', compact('onlyActive'));
+    }
+
+    /**
+     * 获取企业已激活的员工人数
+     *
+     * @return mixed
+     */
+    public function getActivatedUserCount()
+    {
+        return $this->getUserCount(1);
     }
 
     /**
@@ -125,6 +136,6 @@ class Client extends BaseClient
      */
     public function delete($id)
     {
-        return $this->client->postJson('department/delete', compact('id'));
+        return $this->client->get('department/delete', compact('id'));
     }
 }
