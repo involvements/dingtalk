@@ -11,9 +11,13 @@
 
 namespace EasyDingTalk\Kernel;
 
+<<<<<<< HEAD
 use EasyDingTalk\Kernel\Exceptions\InvalidCredentialsException;
 use EasyDingTalk\Kernel\Http\Client;
 use function EasyDingTalk\tap;
+=======
+//use function EasyDingTalk\helpers\tap;
+>>>>>>> master
 use Overtrue\Http\Traits\ResponseCastable;
 
 class AccessToken
